@@ -1,16 +1,17 @@
 import EventItem from "./EventItem";
+import styles from "./event-list.module.css";
 
 function EventList({ data }: { data: any[] }) {
   return (
-    <ul>
+    <ul className={styles.lilst}>
       {data.map((eventData) => (
         <EventItem
-          key={eventData.key}
-          id={eventData.id}
-          title={eventData.title}
-          location={eventData.location}
           date={eventData.date}
+          id={eventData.id}
           image={eventData.image}
+          key={eventData.key}
+          location={eventData.location}
+          title={eventData.title}
         />
       ))}
     </ul>
